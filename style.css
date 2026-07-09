@@ -237,7 +237,7 @@ h4 {
    HERO
    ============================================================ */
 .hero {
-  background-image: linear-gradient(170deg, rgba(26, 26, 26, 0.92) 0%, rgba(42, 36, 32, 0.96) 100%), url('assets/hero_bg.jpg');
+  background-image: linear-gradient(170deg, rgba(26, 26, 26, 0.92) 0%, rgba(42, 36, 32, 0.96) 100%), url('assets/scales_bg.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -248,6 +248,12 @@ h4 {
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-position: 70% center;
+  }
 }
 
 .hero::before {
@@ -474,7 +480,7 @@ h4 {
    PHILOSOPHY BANNER
    ============================================================ */
 .philosophy {
-  background-image: linear-gradient(0deg, rgba(26, 26, 26, 0.85) 0%, rgba(26, 26, 26, 0.85) 100%), url('assets/gavel_bg.jpg');
+  background-image: linear-gradient(0deg, rgba(26, 26, 26, 0.85) 0%, rgba(26, 26, 26, 0.85) 100%), url('assets/gavel_bg.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -882,6 +888,8 @@ h4 {
 @media (max-width: 480px) {
   .hero {
     min-height: 90vh;
+    background-position: 70% center;
+    /* Adjusts scales into view on mobile */
   }
 
   .contact-details {
