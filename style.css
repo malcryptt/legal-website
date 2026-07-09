@@ -198,9 +198,9 @@ h4 {
 }
 
 .nav-logo-icon {
-  width: 24px;
-  height: 24px;
-  color: var(--gold-light);
+  width: 32px;
+  height: auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -300,13 +300,12 @@ h4 {
 }
 
 .hero-logo-icon {
-  width: clamp(60px, 8vw, 90px);
-  height: clamp(60px, 8vw, 90px);
-  color: var(--gold);
+  width: clamp(80px, 12vw, 120px);
+  height: auto;
   margin: 0 auto 1.5rem auto;
   display: block;
   opacity: 1;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
 }
 
 .hero h1 {
