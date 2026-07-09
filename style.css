@@ -299,6 +299,16 @@ h4 {
   }
 }
 
+.hero-logo-icon {
+  width: 64px;
+  height: 64px;
+  stroke: var(--gold);
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
 .hero h1 {
   color: var(--cream);
   margin-bottom: 0.3rem;
