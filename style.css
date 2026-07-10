@@ -17,7 +17,7 @@
   --text-muted: #8a8580;
 
   /* Type scale (fluid) */
-  --fs-display: clamp(2.2rem, 4.5vw, 3.8rem);
+  --fs-display: clamp(1.6rem, 6vw, 3.8rem);
   --fs-h1: clamp(1.8rem, 3vw, 2.8rem);
   --fs-h2: clamp(1.4rem, 2.2vw, 2rem);
   --fs-h3: clamp(1.1rem, 1.6vw, 1.35rem);
@@ -27,7 +27,7 @@
 
   /* Spacing */
   --section-pad-y: clamp(4rem, 8vw, 7rem);
-  --section-pad-x: clamp(1.25rem, 5vw, 6rem);
+  --section-pad-x: clamp(1rem, 5vw, 6rem);
   --gap: clamp(1.5rem, 3vw, 2.5rem);
 
   /* Misc */
@@ -50,6 +50,7 @@ html {
   scroll-padding-top: var(--nav-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -58,6 +59,8 @@ body {
   line-height: 1.7;
   color: var(--text-dark);
   background: var(--cream);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 img,
@@ -913,6 +916,23 @@ h4 {
   .contact-details {
     flex-direction: column;
     gap: 1.2rem;
+  }
+}
+
+/* Extra-small phones (≤ 390px) */
+@media (max-width: 390px) {
+  :root {
+    --fs-display: clamp(1.35rem, 7.5vw, 2rem);
+  }
+
+  .hero-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero .tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
   }
 }
 
