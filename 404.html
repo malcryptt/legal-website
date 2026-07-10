@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — Michael O. Ogunsakin & Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='16' y='22' font-family='serif' font-size='16' font-weight='bold' fill='%23e8b84b' text-anchor='middle'>MO</text></svg>"
+        type="image/svg+xml">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .not-found {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #1a1a1a;
+            padding: 2rem;
+        }
+
+        .not-found-inner {
+            max-width: 560px;
+        }
+
+        .not-found img {
+            width: clamp(60px, 10vw, 90px);
+            height: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+        }
+
+        .not-found .code {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(5rem, 12vw, 8rem);
+            font-weight: 800;
+            color: #c9942f;
+            line-height: 1;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .not-found h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: #f5f3ee;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .not-found p {
+            font-family: 'Source Sans 3', sans-serif;
+            color: #b0ada8;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .not-found a.cta-btn {
+            display: inline-block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: #f5f3ee;
+            background: linear-gradient(135deg, #b5541f, #d97a3a);
+            padding: 0.85em 2.2em;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .not-found a.cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 18px rgba(181, 84, 31, 0.4);
+        }
+
+        .not-found .divider {
+            width: 48px;
+            height: 2px;
+            background: linear-gradient(90deg, #c9942f, #e8b84b);
+            margin: 1rem auto;
+        }
+
+        .not-found .firm-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.8rem;
+            color: #c9942f;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 3rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="not-found">
+        <div class="not-found-inner">
+            <img src="assets/transparent_logo.webp" alt="Michael O. Ogunsakin & Co. Logo" loading="eager">
+            <p class="code">404</p>
+            <div class="divider"></div>
+            <h1>Page Not Found</h1>
+            <p>The page you are looking for may have been moved, renamed, or is temporarily unavailable. Please return
+                to the home page.</p>
+            <a href="/" class="cta-btn">Return to Homepage</a>
+            <p class="firm-name">Michael O. Ogunsakin &amp; Co. — Adunola Chambers</p>
+        </div>
+    </div>
+</body>
+
+</html>
