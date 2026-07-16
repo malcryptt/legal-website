@@ -249,7 +249,7 @@ h4 {
    HERO
    ============================================================ */
 .hero {
-  background-image: linear-gradient(170deg, rgba(26, 26, 26, 0.78) 0%, rgba(42, 36, 32, 0.88) 100%), url('assets/scales_bg_clean.jpg');
+  background-image: linear-gradient(170deg, rgba(26, 26, 26, 0.78) 0%, rgba(42, 36, 32, 0.88) 100%), url('assets/scales_bg_dark.jpg');
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
