@@ -140,6 +140,43 @@
     </div>
   </section>
 
+  <!-- Wave divider: dark → light -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="copperWave3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#b5541f" />
+          <stop offset="60%" stop-color="#d97a3a" />
+          <stop offset="100%" stop-color="#e8b84b" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L1440,0 L1440,40 Q1080,80 720,50 Q360,20 0,60 Z" fill="#1a1a1a" />
+      <path d="M0,58 Q360,18 720,48 Q1080,78 1440,38 L1440,42 Q1080,82 720,52 Q360,22 0,62 Z" fill="url(#copperWave3)"
+        opacity="0.7" />
+      <path d="M0,60 Q360,20 720,50 Q1080,80 1440,40 L1440,80 L0,80 Z" fill="#f5f3ee" />
+    </svg>
+  </div>
+
+  <!-- Measurable distance cream gap requested by user -->
+  <section class="cream-section" style="padding: 2rem 0;"></section>
+
+  <!-- Wave divider: light → dark -->
+  <div class="wave-divider wave-divider--flip" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="copperWaveGap" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#c9942f" />
+          <stop offset="50%" stop-color="#d97a3a" />
+          <stop offset="100%" stop-color="#b5541f" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L1440,0 L1440,40 Q1080,80 720,50 Q360,20 0,60 Z" fill="#f5f3ee" />
+      <path d="M0,58 Q360,18 720,48 Q1080,78 1440,38 L1440,42 Q1080,82 720,52 Q360,22 0,62 Z" fill="url(#copperWaveGap)"
+        opacity="0.7" />
+      <path d="M0,60 Q360,20 720,50 Q1080,80 1440,40 L1440,80 L0,80 Z" fill="#1a1a1a" />
+    </svg>
+  </div>
+
   <!-- ============================================================
     OUR ASSOCIATES
     ============================================================ -->
@@ -156,9 +193,9 @@
           a result. At Michael O. Ogunsakin &amp; Co., hard work and integrity are never optional.
         </p>
       </div>
-      <!-- Right: horizontal scrollable roster -->
+      <!-- Right: touch-swipeable carousel -->
       <div class="associates-scroll-wrapper">
-        <div class="associates-track">
+        <div class="associates-track" id="associatesTrack">
 
           <!-- Associate 1 -->
           <div class="associate-card">
@@ -179,7 +216,9 @@
           <!-- Future associates go here -->
 
         </div><!-- /.associates-track -->
-        <p class="scroll-hint" aria-hidden="true">Scroll →</p>
+
+        <!-- Dot indicators -->
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Associate profiles"></div>
       </div>
     </div>
   </section>
@@ -498,6 +537,46 @@
         btnLoading.style.display = 'none';
       }
     });
+
+    // --- Associate Carousel Dots ---
+    const track = document.getElementById('associatesTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    if (track && dotsContainer) {
+      const cards = track.querySelectorAll('.associate-card');
+
+      // Create a dot for each card
+      cards.forEach((card, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+
+        dot.addEventListener('click', () => {
+          // Scroll track to this card
+          track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        });
+
+        dotsContainer.appendChild(dot);
+      });
+
+      // Update dots on scroll
+      const dots = dotsContainer.querySelectorAll('.dot');
+      track.addEventListener('scroll', () => {
+        const scrollCenter = track.scrollLeft + (track.offsetWidth / 2);
+
+        cards.forEach((card, index) => {
+          const cardLeft = card.offsetLeft - track.offsetLeft;
+          const cardRight = cardLeft + card.offsetWidth;
+
+          if (scrollCenter >= cardLeft && scrollCenter <= cardRight) {
+            dots.forEach(d => d.setAttribute('aria-selected', 'false'));
+            dots[index].setAttribute('aria-selected', 'true');
+          }
+        });
+      }, { passive: true });
+    }
   </script>
 
 </body>
