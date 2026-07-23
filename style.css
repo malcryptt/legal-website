@@ -426,7 +426,8 @@ h4 {
    OUR ASSOCIATES
    ============================================================ */
 .associates {
-  background: var(--cream);
+  background: var(--charcoal);
+  color: var(--text-light);
 }
 
 .associates h2 {
@@ -443,10 +444,10 @@ h4 {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.04);
   border-radius: var(--radius);
   padding: 1.8rem 2rem;
-  box-shadow: 0 2px 16px rgba(26, 26, 26, 0.08);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
   border-top: 3px solid var(--gold);
   flex: 1 1 400px;
   max-width: 640px;
@@ -475,7 +476,7 @@ h4 {
 .associate-info h3 {
   margin-bottom: 0.2rem;
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: var(--charcoal);
+  color: var(--cream);
 }
 
 .associate-info .credentials {
@@ -505,12 +506,12 @@ h4 {
 
 .meta-label {
   font-weight: 600;
-  color: var(--charcoal);
+  color: var(--cream);
   min-width: 130px;
 }
 
 .meta-value {
-  color: #555;
+  color: #c8c4be;
 }
 
 /* ============================================================
