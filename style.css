@@ -434,23 +434,87 @@ h4 {
   margin-bottom: 2rem;
 }
 
-.associates-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+/* Two-column: description left, scroller right */
+.associates-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: start;
 }
+
+.associates-desc {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
+
+.associates-desc h2 {
+  margin-bottom: 1rem;
+}
+
+.associates-blurb {
+  color: #c8c4be;
+  line-height: 1.8;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: var(--fs-small);
+}
+
+/* Scrollable track */
+.associates-scroll-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.associates-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+  /* Hide scrollbar visually but keep it functional */
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) rgba(255, 255, 255, 0.06);
+}
+
+.associates-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.associates-track::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 99px;
+}
+
+.associates-track::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 99px;
+}
+
+.scroll-hint {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(201, 148, 47, 0.6);
+  letter-spacing: 0.1em;
+  text-align: right;
+  margin-top: 0.4rem;
+}
+
 
 .associate-card {
   display: flex;
-  gap: 2rem;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  text-align: center;
   background: rgba(255, 255, 255, 0.04);
   border-radius: var(--radius);
   padding: 1.8rem 2rem;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
   border-top: 3px solid var(--gold);
-  flex: 1 1 400px;
-  max-width: 640px;
+  /* Fixed card width for scroll snapping */
+  flex: 0 0 300px;
+  width: 300px;
+  scroll-snap-align: start;
 }
 
 .associate-photo-wrap {
@@ -1017,6 +1081,17 @@ h4 {
   .hero .tagline {
     font-size: 0.8rem;
     letter-spacing: 0.08em;
+  }
+}
+
+/* Associates responsive */
+@media (max-width: 860px) {
+  .associates-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .associates-desc {
+    position: static;
   }
 }
 
