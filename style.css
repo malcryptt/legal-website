@@ -590,16 +590,21 @@ h4 {
 
 .associate-meta li {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
   font-family: 'Source Sans 3', sans-serif;
   font-size: var(--fs-small);
+  margin-bottom: 0.6rem;
 }
 
 .meta-label {
   font-weight: 600;
   color: var(--cream);
-  min-width: 130px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
 }
 
 .meta-value {
